@@ -18,21 +18,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: siteMetadata.title,
-  description: siteMetadata.description,
-  metadataBase: new URL(siteMetadata.url),
+  title: "Berk Ataş | Portfolio",
+  description: "Management Information Systems Student & Developer",
+  metadataBase: new URL("https://berkatas.netlify.app"), // Netlify link
   openGraph: {
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    url: siteMetadata.url,
-    siteName: siteMetadata.title,
-    locale: "en_US",
+    title: "Berk Ataş | Portfolio",
+    description: "Management Information Systems Student & Developer",
+    url: "https://berkatas.netlify.app",
+    siteName: "Berk Ataş",
+    locale: "tr_TR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: siteMetadata.title,
-    description: siteMetadata.description,
+    title: "Berk Ataş | Portfolio",
+    description: "Management Information Systems Student & Developer",
   },
   robots: {
     index: true,
