@@ -6,7 +6,7 @@ import { contact } from "@/lib/data";
 import TerminalWindow from "@/components/ui/TerminalWindow";
 
 type OutputLine = {
-  type: "input" | "output" | "error" | "link";
+  type: "input" | "output" | "error" | "link" | "accent";
   text: string;
   href?: string;
 };
@@ -59,16 +59,11 @@ export default function ContactTerminal() {
         text: contact.terminal.commands.contact,
       });
       newHistory.push({
-        type: "link",
-        text: `→ ${contact.email}`,
-        href: `mailto:${contact.email}`,
+        type: "accent",
+        text: `📧 ${contact.email}`,
       });
       setHistory(newHistory);
       setInput("");
-      // Open mailto after a brief delay
-      setTimeout(() => {
-        window.location.href = `mailto:${contact.email}`;
-      }, 500);
       return;
     }
 
@@ -171,6 +166,9 @@ export default function ContactTerminal() {
                   {line.type === "error" && (
                     <span className="text-yellow-500/80">{line.text}</span>
                   )}
+                  {line.type === "accent" && (
+                    <span className="text-accent">{line.text}</span>
+                  )}
                   {line.type === "link" && (
                     <a
                       href={line.href}
@@ -217,12 +215,12 @@ export default function ContactTerminal() {
           viewport={{ once: true, margin: "-50px" }}
           className="flex flex-wrap items-center justify-center gap-4 mt-8"
         >
-          <a
-            href={`mailto:${contact.email}`}
-            className="px-5 py-2.5 rounded-lg border border-accent/20 bg-accent/5 text-accent text-sm font-medium transition-all duration-300 hover:bg-accent/15 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(0,229,255,0.1)]"
+          <button
+            onClick={() => processCommand("contact")}
+            className="px-5 py-2.5 rounded-lg border border-accent/20 bg-accent/5 text-accent text-sm font-medium transition-all duration-300 hover:bg-accent/15 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(255,51,51,0.1)]"
           >
             ✉ Email Me
-          </a>
+          </button>
           {contact.socials.map((social) => (
             <a
               key={social.label}

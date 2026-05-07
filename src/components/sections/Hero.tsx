@@ -98,7 +98,7 @@ export default function Hero() {
         >
           <a
             href={hero.cta.primary.href}
-            className="group relative px-8 py-3.5 bg-accent/10 border border-accent/20 rounded-lg text-accent font-medium text-sm transition-all duration-300 hover:bg-accent/20 hover:border-accent/40 hover:shadow-[0_0_25px_rgba(0,229,255,0.15)]"
+            className="group relative px-8 py-3.5 bg-accent/10 border border-accent/20 rounded-lg text-accent font-medium text-sm transition-all duration-300 hover:bg-accent/20 hover:border-accent/40 hover:shadow-[0_0_25px_rgba(255,51,51,0.15)]"
           >
             <span className="relative z-10">{hero.cta.primary.label}</span>
           </a>
@@ -110,19 +110,7 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          variants={fadeInUp}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-5 h-8 rounded-full border border-border flex items-start justify-center p-1.5"
-          >
-            <motion.div className="w-1 h-1.5 rounded-full bg-muted" />
-          </motion.div>
-        </motion.div>
+
       </motion.div>
     </section>
   );

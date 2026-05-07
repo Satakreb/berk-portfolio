@@ -61,7 +61,7 @@ export const bentoItems: BentoItem[] = [
     id: "tech-stack",
     title: "Tech Stack",
     description: "Technologies I've worked with.",
-    items: ["Next.js", "React", "Node.js", "JavaScript", "Supabase", "PostgreSQL"],
+    items: ["Next.js", "React", "Node.js", "JavaScript", "Supabase", "PostgreSQL", "Python", "MySQL", "HTML", "CSS"],
     span: "wide",
     variant: "tech",
     icon: "⚡",

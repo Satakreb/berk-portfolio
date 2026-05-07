@@ -31,15 +31,13 @@ export default function BentoCard({ item, index }: BentoCardProps) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
-      whileHover={{ y: -6, transition: { duration: 0.2, ease: "easeOut" } }}
       className={`
-        glow-card animated-border relative overflow-hidden rounded-2xl border border-border/50
-        bg-surface p-6 sm:p-8 transition-all duration-400
-        hover:bg-surface-hover
+        group relative overflow-hidden rounded-xl border border-white/5
+        bg-surface/60 backdrop-blur-md p-6 sm:p-8 transition-all duration-400 hover:-translate-y-1.5 will-change-transform
+        hover:bg-surface hover:border-white/10 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]
         ${item.span === "wide" ? "sm:col-span-2" : ""}
         ${item.span === "large" ? "sm:col-span-2 sm:row-span-2" : ""}
         ${item.span === "tall" ? "sm:row-span-2" : ""}
-        ${isLife ? "border-accent/10" : ""}
       `}
     >
       {/* Subtle gradient overlay for life card */}

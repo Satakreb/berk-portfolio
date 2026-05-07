@@ -30,8 +30,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
-      whileHover={{ y: -6, transition: { duration: 0.2, ease: "easeOut" } }}
-      className="group glow-card animated-border rounded-2xl border border-border/50 bg-surface overflow-hidden transition-all duration-400 hover:bg-surface-hover"
+      className="group relative overflow-hidden rounded-xl border border-white/5 bg-surface/60 backdrop-blur-md transition-all duration-400 hover:-translate-y-1.5 will-change-transform hover:bg-surface hover:border-white/10 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]"
     >
       {/* Image — grayscale to color on hover */}
       {project.image && (
@@ -51,7 +50,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       {/* Content */}
       <div className="p-6 sm:p-8">
         {/* Type badge */}
-        <span className="font-code text-[10px] uppercase tracking-[0.2em] text-accent/70 mb-3 block">
+        <span className="font-code text-xs uppercase tracking-[0.2em] text-accent/70 mb-3 block">
           {project.type === "project" ? "📁 Project" : "💼 Experience"}
         </span>
 
