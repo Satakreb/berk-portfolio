@@ -85,10 +85,7 @@ export default function OffScreen() {
                 </p>
               </div>
 
-              {/* Arrow */}
-              <span className="ml-auto text-muted/30 group-hover:text-accent/50 transition-all duration-300 group-hover:translate-x-1">
-                →
-              </span>
+
             </motion.div>
           ))}
         </motion.div>
