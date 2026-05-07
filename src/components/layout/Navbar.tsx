@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/lib/data";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,42 +51,50 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm text-muted accent-underline transition-colors duration-200 hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="text-sm text-muted accent-underline transition-colors duration-200 hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle />
+        </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5 z-50"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isOpen}
-        >
-          <motion.span
-            animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            className="block w-6 h-[1.5px] bg-foreground origin-center"
-            transition={{ duration: 0.2 }}
-          />
-          <motion.span
-            animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
-            className="block w-6 h-[1.5px] bg-foreground"
-            transition={{ duration: 0.15 }}
-          />
-          <motion.span
-            animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            className="block w-6 h-[1.5px] bg-foreground origin-center"
-            transition={{ duration: 0.2 }}
-          />
-        </button>
+        {/* Mobile Controls */}
+        <div className="flex items-center gap-4 md:hidden">
+          <ThemeToggle />
+          
+          {/* Mobile Hamburger */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="relative w-8 h-8 flex flex-col items-center justify-center gap-1.5 z-50"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+          >
+            <motion.span
+              animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+              className="block w-6 h-[1.5px] bg-foreground origin-center"
+              transition={{ duration: 0.2 }}
+            />
+            <motion.span
+              animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+              className="block w-6 h-[1.5px] bg-foreground"
+              transition={{ duration: 0.15 }}
+            />
+            <motion.span
+              animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+              className="block w-6 h-[1.5px] bg-foreground origin-center"
+              transition={{ duration: 0.2 }}
+            />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu Overlay */}

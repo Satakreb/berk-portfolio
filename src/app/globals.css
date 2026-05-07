@@ -14,6 +14,25 @@
   --surface-hover: #27272a; /* Zinc 800 */
   --border: #27272a;     /* Zinc 800 */
   --border-hover: #3f3f46;  /* Zinc 700 */
+  --alpha-border: rgba(255, 255, 255, 0.05);
+  --alpha-border-hover: rgba(255, 255, 255, 0.1);
+  --shadow-strong: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.light {
+  --background: #ffffff;
+  --foreground: #18181b; /* Zinc 900 */
+  --muted: #71717a;      /* Zinc 500 */
+  --accent: #ff3333;     /* Keep the Cyberpunk Red */
+  --accent-glow: rgba(255, 51, 51, 0.15);
+  --accent-glow-strong: rgba(255, 51, 51, 0.3);
+  --surface: #f4f4f5;    /* Zinc 100 */
+  --surface-hover: #e4e4e7; /* Zinc 200 */
+  --border: #e4e4e7;     /* Zinc 200 */
+  --border-hover: #d4d4d8;  /* Zinc 300 */
+  --alpha-border: rgba(0, 0, 0, 0.08);
+  --alpha-border-hover: rgba(0, 0, 0, 0.15);
+  --shadow-strong: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
@@ -158,6 +177,9 @@ body {
   border-color: rgba(255, 51, 51, 0.3);
   background: var(--surface-hover);
 }
+.light .glow-card:hover {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 51, 51, 0.05);
+}
 
 /* Darkening to full color transition for project images */
 .grayscale-hover {
@@ -186,6 +208,9 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
+.light .glass {
+  background: rgba(255, 255, 255, 0.7);
+}
 
 /* Subtle animated grid background for hero (white noise grid) */
 .hero-grid-bg {
@@ -194,6 +219,11 @@ body {
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: grid-pulse 4s ease-in-out infinite;
+}
+.light .hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 }
 
 /* Section container */

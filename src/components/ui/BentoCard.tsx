@@ -32,9 +32,9 @@ export default function BentoCard({ item, index }: BentoCardProps) {
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       className={`
-        group relative overflow-hidden rounded-xl border border-white/5
+        group relative overflow-hidden rounded-xl border border-[var(--alpha-border)]
         bg-surface/60 backdrop-blur-md p-6 sm:p-8 transition-all duration-400 hover:-translate-y-1.5 will-change-transform
-        hover:bg-surface hover:border-white/10 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]
+        hover:bg-surface hover:border-[var(--alpha-border-hover)] hover:shadow-[var(--shadow-strong)]
         ${item.span === "wide" ? "sm:col-span-2" : ""}
         ${item.span === "large" ? "sm:col-span-2 sm:row-span-2" : ""}
         ${item.span === "tall" ? "sm:row-span-2" : ""}

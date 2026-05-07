@@ -30,7 +30,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
-      className="group relative overflow-hidden rounded-xl border border-white/5 bg-surface/60 backdrop-blur-md transition-all duration-400 hover:-translate-y-1.5 will-change-transform hover:bg-surface hover:border-white/10 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]"
+      className="group relative overflow-hidden rounded-xl border border-[var(--alpha-border)] bg-surface/60 backdrop-blur-md transition-all duration-400 hover:-translate-y-1.5 will-change-transform hover:bg-surface hover:border-[var(--alpha-border-hover)] hover:shadow-[var(--shadow-strong)]"
     >
       {/* Image — grayscale to color on hover */}
       {project.image && (
